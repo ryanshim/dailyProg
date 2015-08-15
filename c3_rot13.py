@@ -9,6 +9,6 @@ def encode():
     for char in temp:
         rot13 = (origin_table.index(char) + 13) % 26
         encoded += origin_table[rot13]
-    print ''.join(encoded)
+    return ''.join(encoded)
 
 print encode()
