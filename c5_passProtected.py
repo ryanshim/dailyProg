@@ -12,6 +12,7 @@ def main(argv):
         pass_try = hashlib.sha256(getpass.getpass('[+] Enter password: ')).hexdigest()
         if pass_try == password:
             print '[+] Access Granted.'
+            # go to another function after login
         else:
             sys.exit('[+] Access Denied.\n[+] Terminating process.')
     else:
