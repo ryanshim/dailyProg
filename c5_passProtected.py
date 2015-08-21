@@ -8,16 +8,20 @@ def main(argv):
     password = pass_file.readline()[:-1]
     pass_file.close()
 
-    pass_try = ''
-
     if len(password) > 0:
-        pass_try = hashlib.sha256(getpass.getpass('Enter password: ')).hexdigest()
+        pass_try = hashlib.sha256(getpass.getpass('[+] Enter password: ')).hexdigest()
         if pass_try == password:
             print '[+] Access Granted.'
         else:
             sys.exit('[+] Access Denied.\n[+] Terminating process.')
     else:
-        sys.exit('[+] No password set.')
+        set_pass(argv)
+
+def set_pass(argv):
+    pass_file = open(argv, 'w')
+    pass_file.write(hashlib.sha256(getpass.getpass('[+] Enter new password: ')).hexdigest() + '\n') # need a newline due to line 8 readline
+    pass_file.close()
+    return main(argv)
 
 if __name__ == '__main__':
     main(sys.argv[1])
