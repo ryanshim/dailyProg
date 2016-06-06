@@ -1,0 +1,6 @@
+00000This is a sample text file for challenge 15.
+00000000It will left or right justify a text file
+To justify is to move all text start at the beginning of a new line from the left or to the right.
+000000000000000000000000000This is a sample line.
+00000000000000000000000000000Another sample line.
+0000000000000000000000000000000000000000000000000
